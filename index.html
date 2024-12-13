@@ -9,8 +9,6 @@
         body { font-family: Arial, sans-serif; margin: 20px; display: flex; justify-content: space-between; background-color: #f5f5f5; }
         .content { display: flex; flex-direction: column; width: 45%; align-items: center; }
         .header { font-size: 26px; font-weight: bold; margin-bottom: 10px; text-align: center; color: #0078D4; }
-        
-        /* Enhanced Intro Section */
         .intro {
             font-size: 18px;
             margin-top: 10px;
@@ -21,8 +19,6 @@
             border-left: 4px solid #0078D4;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        /* Instructions Section with Icons */
         .instructions {
             font-size: 16px;
             margin-top: 20px;
@@ -45,8 +41,6 @@
             font-size: 18px;
             margin-right: 8px;
         }
-
-        /* Button Styles with 3D and Hover Effects */
         .floating-chat-btn, .feedback-btn {
             background-color: #0058A3;
             color: white;
@@ -70,129 +64,60 @@
             box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
             transform: translateY(2px);
         }
-        
         .floating-chat-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            animation: pulse 1.5s infinite; /* Pulsing effect for attention */
+            animation: pulse 1.5s infinite;
         }
-
-        /* Pulsing Animation for Chat Button */
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(0, 120, 212, 0.5); }
             70% { box-shadow: 0 0 0 15px rgba(0, 120, 212, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 120, 212, 0); }
         }
-
-        /* Feedback Button Adjustment */
         .feedback-btn {
-            background-color: #ff6a00; /* Orange for differentiation */
+            background-color: #ff6a00;
             margin-top: 40px;
         }
-
-        /* Chat Window Popup */
-        .floating-chat {
-            display: none;
-            position: fixed;
-            top: 40px;
-            right: 20px;
-            width: 50%;
-            height: 90%;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            padding: 5px;
-        }
-        .close-floating-chat-btn {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        /* Image Section Styling */
-        .image-container { width: 45%; position: relative; }
-        .background-image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .overlay-text {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 18px;
-        }		
     </style>
     <script>
-        function openFloatingChat() {
-            const chatIframe = document.getElementById('chat-iframe');
-            chatIframe.src = chatIframe.src;  // Resets the chat to a new session
-            document.getElementById('floating-chat-window').style.display = 'block';
+        function openChatInNewTab() {
+            window.open("https://hika-ai.azurewebsites.net", "_blank");
         }
-        
-        function closeFloatingChat() {
-            document.getElementById('floating-chat-window').style.display = 'none';
-        }
-        
+
         function openFeedbackForm() {
             window.open("https://forms.office.com/Pages/ResponsePage.aspx?id=o1IL3MVo90SIHZOD2IULluojbzg2PzxLt_Six4NTidBUMlhLNlZCUklYQTJCWjFOVkhRTDM1QUpKNS4u&embed=true", "_blank");
         }
     </script>
 </head>
 <body>
-    <!-- Main Content Section on the Left -->
     <div class="content">              
 	<div class="intro">
 		<strong>No time to wait in line? Access quick support here.</strong> <br><br>
-		Find answers to your questions assessments, fees, enrolment, library resources, and wellbeing support and more. To start, click on the 'Ask a question' button. Make sure your question is detailed, specific and in complete sentences. Clear chat with the broom button when your done.<br><br>	
-		
-		Just click the blue chat button in the bottom right of the screen and get answers fast while you wait!<br><br>			
-		
-		
+		Find answers to your questions assessments, fees, enrolment, library resources, and wellbeing support and more. To start, click on the 'Ask a question' button. Make sure your question is detailed, specific and in complete sentences. Clear chat with the broom button when your done.<br><br>            
+		Just click the blue chat button in the bottom right of the screen and get answers fast while you wait!<br><br>            
 	</div>
 			
-        <!-- Instructions Section -->
         <div class="instructions">
             <strong>How to Use HiKA-AI:</strong><br>
             <ul>
 	        <li><i class="material-icons">chat</i> Click on the&nbsp;<strong>blue chat button</strong>&nbsp;at the bottom right to start chatting with HiKA-AI.</li>
-	        <li><i class="material-icons">question_answer</i> Type your question and press enter to receive an instant response.</li>		    
+	        <li><i class="material-icons">question_answer</i> Type your question and press enter to receive an instant response.</li>            
 	        <li><i class="material-icons">link</i> If there’s a link in the response, click on it to learn more (opens in a new tab).</li>
 	        <li><i class="material-icons">add</i> Use the&nbsp;<strong>plus button</strong>&nbsp;to add new chat sessions.</li>
-	        <li><i class="material-icons">cleaning_services</i> Click the&nbsp;<strong>broom icon</strong>&nbsp;to clear the chat and start fresh.</li>	        
-		<li><i class="material-icons">history</i> Click on&nbsp;<strong>Show chat history</strong>&nbsp;to view your recent chats with HiKA-AI.</li>				    
+	        <li><i class="material-icons">cleaning_services</i> Click the&nbsp;<strong>broom icon</strong>&nbsp;to clear the chat and start fresh.</li>            
+		<li><i class="material-icons">history</i> Click on&nbsp;<strong>Show chat history</strong>&nbsp;to view your recent chats with HiKA-AI.</li>                    
 		<li><i class="material-icons">close</i> Click the "X" in the top right corner to close the chat and reset for the next user.</li>                    </ul>
             <strong>Note:</strong> Each new chat resets the conversation, so feel free to explore different questions!
             <br><br>
             <strong>Tip for Better Questions:</strong> For the best responses, ask detailed, specific questions. Provide context (e.g., topic or department) and use complete sentences. This helps HiKA-AI give you accurate answers more quickly.
 	</div>
-
-        <!-- Feedback Button Centered -->
         <button class="feedback-btn" onclick="openFeedbackForm()">Leave Feedback</button>
     </div>
-
-    <!-- Image Section on the Right -->
     <div class="image-container">
         <img src="HiQ_concierges_12062019_3930_cropped.jpg" alt="Welcome to HiQ" class="background-image">
 		<div class="overlay-text">Our Friendly Concierge Team</div>
     </div>
-
-    <!-- Floating Chat Button with Animation -->
-    <button class="floating-chat-btn" onclick="openFloatingChat()">Ask a question</button>
-
-    <!-- Chat Window Popup -->
-    <div id="floating-chat-window" class="floating-chat">
-        <span class="close-floating-chat-btn" onclick="closeFloatingChat()">&times;</span>
-        <iframe id="chat-iframe" src="https://hika-ai.azurewebsites.net" width="100%" height="100%" frameborder="0"></iframe>
-    </div>
+    <button class="floating-chat-btn" onclick="openChatInNewTab()">Ask a question</button>
 </body>
 </html>
